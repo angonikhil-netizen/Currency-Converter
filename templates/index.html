@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AI Currency Converter</title>
+</head>
+<body>
+    <div class="card">
+        <h2>AI Currency Converter</h2>
+        <form method="POST">
+            <input type="number" name="amount" placeholder="Enter Amount" required>
+            <select name="from_curr">
+                <option value="USD">USD - US Dollar</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="EUR">EUR - Euro</option>
+            </select>
+            <select name="to_curr">
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+            </select>
+            <button type="submit">Convert with Llama 3</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <strong>Result:</strong><br>
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
